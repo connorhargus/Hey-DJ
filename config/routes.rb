@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
 
-	root 'application#hello'
+  get 'pages/about'
+
+  get '/new', to: 'plays#new'
+
+	root 'pages#home'
+
 end
