@@ -14,6 +14,6 @@
  *= require_self
  */
 
-.form-test {
-	margin:25%;
+.upvote {
+	border-radius: 5px;
 }

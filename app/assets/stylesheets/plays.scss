@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#form-test {
-	margin:40px;
+
+
+.row {
+	margin-left:20px;
+	margin-top:20px;
+
+	.rowlabel {
+		margin-top:32px;
+	}
+}
+
+.submitButton {
+	margin:20px;
+	float:right;
 }
