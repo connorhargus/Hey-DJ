@@ -1,16 +1,16 @@
 
 <%= react_component("Header") %>
 
+<%= react_component("Playing", {url: @plays[0][:url]}) %>
 
 <%= react_component("Leaderboard", {plays: @plays}) %>
 
-<%= react_component("Playing") %>
 
-<%= react_component("Contact") %>
 
 	 <!-- Map Section -->
     <div id="map"></div>
 
+<%= react_component("Contact") %>
 
 <%= react_component("Footer") %>
 

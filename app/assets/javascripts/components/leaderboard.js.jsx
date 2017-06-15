@@ -1,19 +1,32 @@
 class Leaderboard extends React.Component {
 	
-	constructor() {
+	constructor(props) {
 		super(props);
+
+		this.state = {upvotes: []}
+
+		var stateCopy = this.state
+		this.props.plays.map(function(play, i){
+			stateCopy.upvotes.push(play.votes)
+		})
+
+		this.state = stateCopy;
 		this.handleUpvote = this.handleUpvote.bind(this);
 	}
 
 	handleUpvote(e) {
-		var data = {
-	    /*title: */
-	  }
 
+		var state = this.state
+		state.upvotes[e.target.id] = state.upvotes[e.target.id] + 1
+		this.setState(state)
+
+		var data = {
+	    id: e.target.name,
+	  }
 	  var ajaxParams = {
 	    type: 'POST',
 	    dataType: 'json',
-	    url: '/api/newplay',
+	    url: '/api/newvote',
 	    data: data
 	  }
 
@@ -48,21 +61,14 @@ class Leaderboard extends React.Component {
 					    				<tr key={i}>
 					        			<td>{play.title}</td>
 					        			<td>{play.artist}</td>
-					        			<td>{play.votes} <input className="upvote" type="submit" onClick={this.handleUpvote} value="+"/> </td>
+					        			<td>{this.state.upvotes[i]} <input type="button" name={play.id} id={i} className="upvote" onClick={this.handleUpvote} value="+"/> </td>
 					        			<td>{play.author}</td>
 					      			</tr>
 					    			)
-					    	})}
+					    	}.bind(this))}
 					      
 					    </tbody>
 					  </table>
-					</div>
-
-					<div className="media text-center">
-						<div className="">
-						<h5 className="mt-0">How It Works:</h5>
-						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					  </div>
 					</div>
 		    </section>
 		)

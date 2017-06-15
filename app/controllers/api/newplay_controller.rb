@@ -5,7 +5,8 @@ class Api::NewplayController < ApplicationController
 	def create
 		name = params[:name]
 		url = params[:url]
-
+		url.sub! "height=\"450\"", "height=\"250\""
+		url.sub! "auto_play=false", "auto_play=true"
 		# If song has been submitted before, don't
 		song = Song.find_by url: url
 		if(song == nil) 
@@ -18,5 +19,7 @@ class Api::NewplayController < ApplicationController
 		respond_to do |format|
 			format.json { render json: @play}
 		end
+
+		
 	end
 end
