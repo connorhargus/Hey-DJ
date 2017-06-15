@@ -16,18 +16,18 @@ kamaiyahPlay = Play.create(author: "Joe", played: false, song_id: kamaiyah.id)
 chancePlay = Play.create(author: "Katy", played: false, song_id: chance.id)
 tranePlay = Play.create(author: "George", played: false, song_id: trane.id)
 
-5.times {
+7.times {
 	Vote.create(play_id: trane.id)
 }
 
-4.times {
+2.times {
 	Vote.create(play_id: thugPlay.id)
 }
 
-6.times {
+3.times {
 	Vote.create(play_id: kamaiyahPlay.id)
 }
 
-9.times {
+5.times {
 	Vote.create(play_id: chancePlay.id)
 }
