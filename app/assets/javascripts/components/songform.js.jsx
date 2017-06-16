@@ -48,7 +48,6 @@ class Songform extends React.Component {
 		return (
 			<div className="ui input container" id="form-test">
 			<form onSubmit={this.handleSubmit}>
-				<div className="row">
 				<div className="col-xs-6">
 					<div className="row rowlabel">
 	  			<label>Your Name:</label>
@@ -60,7 +59,7 @@ class Songform extends React.Component {
 	  			<label>Artist: </label>
 	  			</div>
 	  			<div className="row rowlabel">
-	  			<label>SoundCloud Embed Link: </label>
+	  			<label>SoundCloud/YouTube Embed Link: </label>
 	  			</div>
 				</div>
 				<div className="col-xs-6">
@@ -80,8 +79,6 @@ class Songform extends React.Component {
 	  			<input type="submit" value="Submit" />
 					</div>
 				</div>
-				</div>
-  			
 			</form>
 			</div>
 		)
